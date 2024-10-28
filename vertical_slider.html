@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Carousel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        .vertical .carousel-inner {
+            margin-top:20%;
+            height: 300px;
+            width: 30%;
+        }
+
+        .carousel.vertical .item {
+            transition: 0.6s ease-in-out top;
+        }
+
+        .carousel.vertical .active {
+            top: 0;
+        }
+
+        .carousel.vertical .next {
+            top: 400px; 
+        }
+
+        .carousel.vertical .prev {
+            top: -400px; /* Adjust based on your image height */
+        }
+
+        .carousel.vertical .next.left,
+        .carousel.vertical .prev.right {
+            top: 0;
+        }
+
+        .carousel.vertical .active.left {
+            top: -400px; /* Adjust based on your image height */
+        }
+
+        .carousel.vertical .active.right {
+            top: 400px; /* Adjust based on your image height */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row-fluid">
+        <div class="span6 offset3">
+            <div id="myCarousel" class="carousel slide vertical" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="active item">
+                       <h2>One Stop Solution for After Sales Services and
+                        Consumer Electronics</h2>
+                    </div>
+                    <div class="item">
+                       <h2>End to end Telecom
+                        Technology Solutions and
+                        Services Provider</h2>
+                    </div>
+                    <div class="item">
+                        <h2>360-degree Software Solutions Aligned with Industry</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function() {
+        setInterval(function() {
+            $('#myCarousel').carousel('next');
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
